@@ -61,6 +61,9 @@ public class PatientService {
         Patient updatedPatient = patientRepository.save(patient);
         return PatientMapper.toDTO(updatedPatient);
     }
+    public void deletePatient(UUID id) {
+        patientRepository.deleteById(id);
+    }
 }
 //List<PatientResponseDTO> patientResponseDTOs = patients.stream().map(patient -> PatientMapper.toDTO(patient)).toList();
 //patients.stream().map(PatientMapper::toDTO).toList();
